@@ -1,8 +1,8 @@
-var friendsArray = [
+var friendArray = [
 	{
 		name: 'Hulk',
 		photo: 'https://upload.wikimedia.org/wikipedia/en/5/59/Hulk_%28comics_character%29.png',
-		scores: [
+		ratings: [
 			'1',
 			'1',
 			'1',
@@ -17,4 +17,4 @@ var friendsArray = [
 	}
 ];
 
-module.exports = friendsArray;
+module.exports = friendArray;

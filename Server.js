@@ -2,19 +2,19 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
+var cors = require('cors');
 
 var app = express();
-var PORT = process.env.PORT;
-
-app.use(express.static(path.join(__dirname, './app/public')));
-
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
+app.use(bodyParser.json({type: 'application/vnd.api+json'}))
 
-require(path.join(__dirname, './app/routing/apiRoutes'))(app);
-require(path.join(__dirname, './app/routing/htmlRoutes'))(app);
 
-app.listen(PORT, function () {
-  console.log('Friend Finder app is listening on PORT: ' + PORT);
-});
+
+require('./app/routing/apiRoutes')(app);
+require('./app/routing/htmlRoutes')(app);
+
+var port = 3000;
+app.listen(3000, function(){ console.log('serveer on ', 3000)});
