@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <!-- <link href="css/reset.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet"> -->
+
+    <title>Friend Finder</title>
+</head>
+
+<body>
+    <div class="container">
+        <form id="surveyForm">
+            <h2>Survey</h2>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>About Me</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="inputName">Name</label>
+                        <input type="name" class="form-control" id="inputName" placeholder="Full Name">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="inputPhotoLink">Photo Link</label>
+                        <input type="photoLink" class="form-control" id="inputPhotoLink" placeholder="Link to Photo">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Question 1</h4>
+                    <div class="form-group">
+                        <label for="questionOne">I adapt easily to new situations.</label>
+                        <select class="form-control">
+                            <option value="" selected disabled>Please select</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree) </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4>Question 2</h4>
+                    <div class="form-group">
+                        <label for="questionTwo">I value cooperation over competition.</label>
+                        <select class="form-control">
+                            <option value="" selected disabled>Please select</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree) </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4>Question 3</h4>
+                    <div class="form-group">
+                        <label for="questionThree">I like to solve complex problems.</label>
+                        <select class="form-control">
+                            <option value="" selected disabled>Please select</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree) </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Question 4</h4>
+                    <div class="form-group">
+                        <label for="questionFour">I like a leisurely lifestyle.</label>
+                        <select class="form-control">
+                            <option value="" selected disabled>Please select</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree) </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4>Question 5</h4>
+                    <div class="form-group">
+                        <label for="questionFive">In a discussion, truth should be more important than people’s sensitivities.
+                            </label>
+                        <select class="form-control">
+                            <option value="" selected disabled>Please select</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree) </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4>Question 6</h4>
+                    <div class="form-group">
+                        <label for="questionSix">I have difficulty understanding abstract ideas.</label>
+                        <select class="form-control">
+                            <option value="" selected disabled>Please select</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree) </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Question 7</h4>
+                    <div class="form-group">
+                        <label for="questionSeven">I am comfortable in unfamiliar situations.</label>
+                        <select class="form-control">
+                            <option value="" selected disabled>Please select</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree) </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4>Question 8</h4>
+                    <div class="form-group">
+                        <label for="questionEight">I turn plans into actions.</label>
+                        <select class="form-control">
+                            <option value="" selected disabled>Please select</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree) </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4>Question 9</h4>
+                    <div class="form-group">
+                        <label for="questionNine">I don't worry about things that have already happened.</label>
+                        <select class="form-control">
+                            <option value="" selected disabled>Please select</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree) </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Question 10</h4>
+                    <div class="form-group">
+                        <label for="questionTen">I can manage many things at the same time.</label>
+                        <select class="form-control">
+                            <option value="" selected disabled>Please select</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree) </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
+                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                        Submit</button>
+                </div>
+            </div>
+        </form>
+        <div class="modal" id="results">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Best Match</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h4 id="bestMatch"></h4>
+                        <img id="bestMatchImage" src="">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+    $("#surveyForm").on('submit', function () {
+        $('#results').modal('show');
+        var userInput = {
+            name: $('#inputName').val().trim(),
+            photo: $('#inputPhotoLink').val().trim(),
+            scores: [
+                $('#questionOne').val().trim(),
+                $('#questionTwo').val().trim(),
+                $('#questionThree').val().trim(),
+                $('#questionFour').val().trim(),
+                $('#questionFive').val().trim(),
+                $('#questionSix').val().trim(),
+                $('#questionSeven').val().trim(),
+                $('#questionEight').val().trim(),
+                $('#questionNine').val().trim(),
+                $('#questionTen').val().trim()
+            ]
+        };
+
+        console.log(userInput);
+
+        $.post('/api/friends', userInput)
+            .done(function (data) {
+                console.log("HEY");
+                $('#bestMatch').html(data.matchName);
+                $("#bestMatchImage").attr("src", data.matchImage);
+                //$('#results').modal('show');
+            });
+        return false;
+    });
+</script>

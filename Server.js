@@ -2,6 +2,8 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
+var http = require("http");
+var fs = require("fs");
 
 // Tells node that we are creating an "express" server and the port to use
 var app = express();
