@@ -17,7 +17,7 @@
 <body>
     <div class="container">
         <form id="surveyForm">
-            <h2>Survey</h2>
+            <h2>Friend Finder Survey Questions</h2>
             <hr>
             <div class="row">
                 <div class="col-md-6">
@@ -25,24 +25,24 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="form-group">
-                        <label for="inputName">Name</label>
+                        <label for="inputName">Name (Required)</label>
                         <input type="name" class="form-control" id="inputName" placeholder="Full Name">
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="form-group">
-                        <label for="inputPhotoLink">Photo Link</label>
+                        <label for="inputPhotoLink">Link to Photo Image (Required)</label>
                         <input type="photoLink" class="form-control" id="inputPhotoLink" placeholder="Link to Photo">
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <h4>Question 1</h4>
                     <div class="form-group">
-                        <label for="questionOne">I adapt easily to new situations.</label>
+                        <label for="questionOne">I believe that there is no absolute right and wrong.</label>
                         <select class="form-control">
                             <option value="" selected disabled>Please select</option>
                             <option value="1">1 (Strongly Disagree)</option>
@@ -53,7 +53,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <h4>Question 2</h4>
                     <div class="form-group">
                         <label for="questionTwo">I value cooperation over competition.</label>
@@ -67,7 +67,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <h4>Question 3</h4>
                     <div class="form-group">
                         <label for="questionThree">I like to solve complex problems.</label>
@@ -81,9 +81,9 @@
                         </select>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
+
+
+                <div class="col-md-6">
                     <h4>Question 4</h4>
                     <div class="form-group">
                         <label for="questionFour">I like a leisurely lifestyle.</label>
@@ -97,11 +97,11 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <h4>Question 5</h4>
                     <div class="form-group">
                         <label for="questionFive">In a discussion, truth should be more important than people’s sensitivities.
-                            </label>
+                        </label>
                         <select class="form-control">
                             <option value="" selected disabled>Please select</option>
                             <option value="1">1 (Strongly Disagree)</option>
@@ -112,7 +112,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <h4>Question 6</h4>
                     <div class="form-group">
                         <label for="questionSix">I have difficulty understanding abstract ideas.</label>
@@ -126,9 +126,9 @@
                         </select>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
+
+
+                <div class="col-md-6">
                     <h4>Question 7</h4>
                     <div class="form-group">
                         <label for="questionSeven">I am comfortable in unfamiliar situations.</label>
@@ -142,7 +142,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <h4>Question 8</h4>
                     <div class="form-group">
                         <label for="questionEight">I turn plans into actions.</label>
@@ -156,7 +156,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <h4>Question 9</h4>
                     <div class="form-group">
                         <label for="questionNine">I don't worry about things that have already happened.</label>
@@ -170,9 +170,9 @@
                         </select>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
+
+
+                <div class="col-md-6">
                     <h4>Question 10</h4>
                     <div class="form-group">
                         <label for="questionTen">I can manage many things at the same time.</label>
@@ -194,6 +194,10 @@
                         Submit</button>
                 </div>
             </div>
+            <li>
+                <a class="grey-text text-lighten-3" href="/api/friends.js">API Friends List</a>
+            </li>
+
         </form>
         <div class="modal" id="results">
             <div class="modal-dialog" role="document">
@@ -217,7 +221,6 @@
     </div>
 </body>
 
-</html>
 
 <script type="text/javascript">
     $("#surveyForm").on('submit', function () {
@@ -251,3 +254,5 @@
         return false;
     });
 </script>
+
+</html>

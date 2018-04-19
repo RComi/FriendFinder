@@ -1,7 +1,7 @@
 var friendsArray = [
 	{
-		name: 'Bart',
-		photo: 'https://en.wikipedia.org/wiki/Bart_Simpson#/media/File:Bart_Simpson_200px.png',
+		name: 'Hulk',
+		photo: 'https://upload.wikimedia.org/wikipedia/en/5/59/Hulk_%28comics_character%29.png',
 		scores: [
 			'1',
 			'1',
