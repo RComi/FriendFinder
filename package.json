@@ -1,8 +1,8 @@
 {
   "name": "friendfinder",
   "version": "1.0.0",
-  "description": "",
-  "main": "Server.js",
+  "description": "Homework",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -11,14 +11,16 @@
     "type": "git",
     "url": "git+https://github.com/RComi/FriendFinder.git"
   },
-  "author": "",
+  "author": "Richard",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/RComi/FriendFinder/issues"
   },
   "homepage": "https://github.com/RComi/FriendFinder#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "path": "^0.12.7"
   },
   "devDependencies": {}
 }

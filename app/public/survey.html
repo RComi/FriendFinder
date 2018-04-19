@@ -43,7 +43,7 @@
                     <h4>Question 1</h4>
                     <div class="form-group">
                         <label for="questionOne">I believe that there is no absolute right and wrong.</label>
-                        <select class="form-control">
+                        <select class="form-control" name="question" id="questionOne">
                             <option value="" selected disabled>Please select</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
@@ -57,8 +57,8 @@
                     <h4>Question 2</h4>
                     <div class="form-group">
                         <label for="questionTwo">I value cooperation over competition.</label>
-                        <select class="form-control">
-                            <option value="" selected disabled>Please select</option>
+                        <select class="form-control" name="question" id="questionTwo">
+                            <option value="" selected selected disabled>Please select</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -71,7 +71,7 @@
                     <h4>Question 3</h4>
                     <div class="form-group">
                         <label for="questionThree">I like to solve complex problems.</label>
-                        <select class="form-control">
+                        <select class="form-control" name="question" id="questionThree">
                             <option value="" selected disabled>Please select</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
@@ -87,7 +87,7 @@
                     <h4>Question 4</h4>
                     <div class="form-group">
                         <label for="questionFour">I like a leisurely lifestyle.</label>
-                        <select class="form-control">
+                        <select class="form-control" name="question" id="questionFour">
                             <option value="" selected disabled>Please select</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
@@ -102,7 +102,7 @@
                     <div class="form-group">
                         <label for="questionFive">In a discussion, truth should be more important than people’s sensitivities.
                         </label>
-                        <select class="form-control">
+                        <select class="form-control" name="question" id="questionFive">
                             <option value="" selected disabled>Please select</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
@@ -116,7 +116,7 @@
                     <h4>Question 6</h4>
                     <div class="form-group">
                         <label for="questionSix">I have difficulty understanding abstract ideas.</label>
-                        <select class="form-control">
+                        <select class="form-control" name="question" id="questionSix">
                             <option value="" selected disabled>Please select</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
@@ -132,7 +132,7 @@
                     <h4>Question 7</h4>
                     <div class="form-group">
                         <label for="questionSeven">I am comfortable in unfamiliar situations.</label>
-                        <select class="form-control">
+                        <select class="form-control" name="question" id="questionSeven">
                             <option value="" selected disabled>Please select</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
@@ -146,7 +146,7 @@
                     <h4>Question 8</h4>
                     <div class="form-group">
                         <label for="questionEight">I turn plans into actions.</label>
-                        <select class="form-control">
+                        <select class="form-control" name="question" id="questionEight">
                             <option value="" selected disabled>Please select</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
@@ -160,7 +160,7 @@
                     <h4>Question 9</h4>
                     <div class="form-group">
                         <label for="questionNine">I don't worry about things that have already happened.</label>
-                        <select class="form-control">
+                        <select class="form-control" name="question" id="questionNine">
                             <option value="" selected disabled>Please select</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
@@ -176,7 +176,7 @@
                     <h4>Question 10</h4>
                     <div class="form-group">
                         <label for="questionTen">I can manage many things at the same time.</label>
-                        <select class="form-control">
+                        <select class="form-control" name="question" id="questionTen">
                             <option value="" selected disabled>Please select</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
@@ -213,7 +213,7 @@
                         <img id="bestMatchImage" src="">
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
@@ -223,27 +223,27 @@
 
 
 <script type="text/javascript">
-    $("#surveyForm").on('submit', function () {
-        $('#results').modal('show');
+    $("#surveyForm").on('submit', function (e) {
+        e.preventDefault();
+        //$('#results').modal('show');
         var userInput = {
-            name: $('#inputName').val().trim(),
-            photo: $('#inputPhotoLink').val().trim(),
+            name: $('#inputName').val(),
+            photo: $('#inputPhotoLink').val(),
             scores: [
-                $('#questionOne').val().trim(),
-                $('#questionTwo').val().trim(),
-                $('#questionThree').val().trim(),
-                $('#questionFour').val().trim(),
-                $('#questionFive').val().trim(),
-                $('#questionSix').val().trim(),
-                $('#questionSeven').val().trim(),
-                $('#questionEight').val().trim(),
-                $('#questionNine').val().trim(),
-                $('#questionTen').val().trim()
+                $('#questionOne').val(),
+                $('#questionTwo').val(),
+                $('#questionThree').val(),
+                $('#questionFour').val(),
+                $('#questionFive').val(),
+                $('#questionSix').val(),
+                $('#questionSeven').val(),
+                $('#questionEight').val(),
+                $('#questionNine').val(),
+                $('#questionTen').val()
             ]
         };
 
         console.log(userInput);
-
         $.post('/api/friends', userInput)
             .done(function (data) {
                 console.log("HEY");
@@ -251,7 +251,7 @@
                 $("#bestMatchImage").attr("src", data.matchImage);
                 //$('#results').modal('show');
             });
-        return false;
+
     });
 </script>
 
