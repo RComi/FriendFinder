@@ -224,38 +224,37 @@
     </div>
 
 
-<script type="text/javascript">
-    $("#surveyForm").on('submit', function (event) {
-        event.preventDefault();
-        //$('#results').modal('show');
-        var surveyInput = {
-            name: $('#inputName').val(),
-            photo: $('#inputPhotoLink').val(),
-            ratings: [
-                $('#questionOne').val(),
-                $('#questionTwo').val(),
-                $('#questionThree').val(),
-                $('#questionFour').val(),
-                $('#questionFive').val(),
-                $('#questionSix').val(),
-                $('#questionSeven').val(),
-                $('#questionEight').val(),
-                $('#questionNine').val(),
-                $('#questionTen').val()
-            ]
-        };
+    <script type="text/javascript">
+        $("#surveyForm").on('submit', function (event) {
+            event.preventDefault();
 
-        console.log(surveyInput);
-        $.post('/api/friends', surveyInput)
-            .done(function (data) {
-                console.log("HEY");
-                $('#bestMatch').html(data.matchName);
-                $("#bestMatchImage").attr("src", data.matchImage);
-                $('#results').modal('show');
-            });
+            var surveyInput = {
+                name: $('#inputName').val(),
+                photo: $('#inputPhotoLink').val(),
+                ratings: [
+                    $('#questionOne').val(),
+                    $('#questionTwo').val(),
+                    $('#questionThree').val(),
+                    $('#questionFour').val(),
+                    $('#questionFive').val(),
+                    $('#questionSix').val(),
+                    $('#questionSeven').val(),
+                    $('#questionEight').val(),
+                    $('#questionNine').val(),
+                    $('#questionTen').val()
+                ]
+            };
 
-    });
-</script>
+            $.post('/api/friends', surveyInput)
+                .done(function (data) {
+                    console.log(data);
+                    $('#bestMatch').html(data.friendName);
+                    console.log(data.friendName + data.friendPhoto);
+                    $("#bestMatchImage").attr("src", data.friendPhoto);
+                    $('#results').modal('show');
+                });
+        });
+    </script>
 
 </body>
 
