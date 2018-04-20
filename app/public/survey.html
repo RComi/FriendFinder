@@ -36,7 +36,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-md-6">
                     <h4>Question 1</h4>
@@ -52,7 +51,6 @@
                         </select>
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <h4>Question 2</h4>
                     <div class="form-group">
@@ -67,7 +65,6 @@
                         </select>
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <h4>Question 3</h4>
                     <div class="form-group">
@@ -82,7 +79,6 @@
                         </select>
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <h4>Question 4</h4>
                     <div class="form-group">
@@ -97,7 +93,6 @@
                         </select>
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <h4>Question 5</h4>
                     <div class="form-group">
@@ -113,7 +108,6 @@
                         </select>
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <h4>Question 6</h4>
                     <div class="form-group">
@@ -128,7 +122,6 @@
                         </select>
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <h4>Question 7</h4>
                     <div class="form-group">
@@ -143,7 +136,6 @@
                         </select>
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <h4>Question 8</h4>
                     <div class="form-group">
@@ -158,7 +150,6 @@
                         </select>
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <h4>Question 9</h4>
                     <div class="form-group">
@@ -173,7 +164,6 @@
                         </select>
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <h4>Question 10</h4>
                     <div class="form-group">
@@ -189,7 +179,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-md-12">
                     <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
@@ -197,10 +186,7 @@
                         Submit</button>
                 </div>
             </div>
-            <li>
-                <a class="grey-text text-lighten-3" href="/api/friends">API Friends List</a>
-            </li>
-
+            <a class="grey-text text-lighten-3" href="/api/friends">API Friend List</a>
         </form>
         <div class="modal" id="results">
             <div class="modal-dialog" role="document">
@@ -225,9 +211,11 @@
 
 
     <script type="text/javascript">
+        //When the submit button is clicked it gets the user input and finds the best match
         $("#surveyForm").on('submit', function (event) {
             event.preventDefault();
 
+            //get the user input
             var surveyInput = {
                 name: $('#inputName').val(),
                 photo: $('#inputPhotoLink').val(),
@@ -244,13 +232,12 @@
                     $('#questionTen').val()
                 ]
             };
-
+            //looks at the friend list and finds the best match and display the name and image in the modal
             $.post('/api/friends', surveyInput)
                 .done(function (data) {
                     console.log(data);
-                    $('#bestMatch').html(data.friendName);
-                    console.log(data.friendName + data.friendPhoto);
-                    $("#bestMatchImage").attr("src", data.friendPhoto);
+                    $('#bestMatch').html(data.name);
+                    $("#bestMatchImage").attr("src", data.photo);
                     $('#results').modal('show');
                 });
         });

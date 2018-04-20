@@ -1,3 +1,4 @@
+//set up friend array
 var friendArray = [
 	{
 		name: 'Hulk',
