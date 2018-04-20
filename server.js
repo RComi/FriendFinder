@@ -21,7 +21,7 @@ require('./app/routing/apiRoutes')(app);
 require('./app/routing/htmlRoutes')(app);
 
 //Created a port for node localhost
-var port = 3500;
+var port = process.env.PORT || 3500;
 app.listen(port, function () {
     console.log('server on ', port)
 });
